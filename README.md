@@ -1,57 +1,38 @@
 ## Intuit Coding Challenge
+This is a simple application to display photographers from json data. It was built using React and Node.js and should be able to run locally. 
 
-### Prerequisites
+### Steps Remaining (Before November 15, Tuesday)
+- Add React Form Validation 
+- Finish React Testing (Front end)
+- Style App
 
 ### Installation and Running
 
-Make sure to set the path to the csv files when you start the program. 
+#### Front End 
+Install: 
+- Navigate to the root project directory (front_end)
+- Type and run from Terminal: npm install
 
-### Front End Structure
-    .
-    ├── ...
-        App 	                   
-         |
-      Photo App
-         |
-     ────────────────
-     |               | 
- Photo Search        Photo List
-                        | 
-                    Photo Card (s)
+Run: 
+- Type and run from Terminal: npm start
+- You must have the front and backend both running for the front end to work 
 
-       
-       ├── Assignments.py               
-    │   ├── Covenant.py              
-    │   ├── DataFunctions.py             
-    │   ├── Facility.py             
-    │   ├── Loan.py           
-    ├── data 							 
-    ├── Intuit- Discussion Questions     
-    ├── Main.py 						 
-    ├── README.MD
-    └── ...
+Run Tests:
+- Navigate to the root project directory (front_end)
+- Type and run from Terminal: npm test
 
+#### Back End 
+Install: 
+- Navigate to the root project directory (back_end)
+- Type and run from Terminal: npm install
 
-    .
-    ├── ...
-    ├── classes 	                   
-    │   ├── Assignments.py               
-    │   ├── Covenant.py              
-    │   ├── DataFunctions.py             
-    │   ├── Facility.py             
-    │   ├── Loan.py           
-    ├── data 							 
-    ├── Intuit- Discussion Questions     
-    ├── Main.py 						 
-    ├── README.MD
-    └── ...
- 
-### Function Inputs
-#### Function 1A: Add Covenants to each Facility ####
+Run: 
+- Type and run from Terminal: nodemon index.js
+- You must have the front and backend both running for the front end to work 
 
- 
-#### Function 1E: Process all Loans ####
- 
+Run Tests:
+- Navigate to the root project directory (back_end)
+- Type and run from Terminal: npm test
 
 ### Questions
 Please feel free to reach out if there are any issues

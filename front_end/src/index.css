@@ -1,0 +1,204 @@
+/*TOC*/
+/*
+Global
+SECTION 1: Main Body, Global Styles 
+SECTION 2: Site Structure
+
+Header and Navigation 
+SECTION 3A: Header and Navigation Bar 
+
+Page Specific 
+SECTION 4A: Photographer Page
+
+Component Specific
+SECTION 5A: Photo List
+SECTION 5B: Photo Card
+
+Site Defaults
+SECTION 6A: CSS defaults  
+SECTION 6A: Buttons
+SECTION 6B: Warning and Error Text	
+SECTION 6C: Fonts				
+
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/****************************************************
+SECTION 1: Main Body, Global Styles
+*****************************************************/
+html {	
+	height: 100%;
+	background-color: #FFFFFF;	    		
+}
+
+
+/****************************************************
+SECTION 2: Site Structure
+*****************************************************/
+#site-wrapper {
+	background-color: #F8F9FA;		
+	background-color: #FFFFFF;		
+	width: 98%;
+	max-width: 1440px;
+	overflow: auto;	
+	margin: 68px auto 0px auto;
+  min-height: 400px;
+}
+
+#widget-container {	
+  float: left;
+	min-height: 100px;
+	width: 600px;
+	margin: 20px auto 0px auto;
+}
+
+
+@media (max-width: 1000px) {
+	#widget-container{
+		overflow: auto;	
+	}
+} 
+
+@media (max-width: 600px) {
+	#widget-container{
+		width: 90%;
+		overflow: auto;	
+		min-width: 400px;
+	}
+} 
+
+
+/****************************************************
+SECTION 3: Header and Navigation Bar 
+*****************************************************/
+header {
+  position:fixed;
+  top: 0px;
+  background-color: #343A40;		
+  background-color: #FFFFFF;	
+  width: 100%;	
+  height: 68px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);	
+  z-index: 10;
+}
+
+
+/****************************************************
+SECTION 4A: Photographer Page
+*****************************************************/
+
+
+/****************************************************
+SECTION 5A: Photo Search
+*****************************************************/
+.search {
+  float: left;
+  width: 98%;
+  min-height: 120px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+
+/****************************************************
+SECTION 5B: Photo List
+*****************************************************/
+.photo-list {
+  float: left;
+  margin-top: 40px;
+  width: 98%;
+  min-height: 60px;
+}
+
+
+/****************************************************
+SECTION 5C: Photo Card
+*****************************************************/
+.card {
+  float: left;
+  width: 98%;
+  min-height: 60px;
+  border: 1px solid black;
+}
+
+.avatar {
+  float: left;
+  margin: 0px;
+  width: 20%;
+  height: 60px;
+}
+
+.avatar-image {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.name {
+  float: left;
+  margin: 0px;
+  width: 78%;
+  height: 30px;
+}
+
+.location {
+  float: left;
+  margin: 0px;
+  width: 78%;
+  height: 28px;
+}
+
+.events {
+  float: left;
+  margin: 0px;
+  clear: both;
+  width: 90%;
+  min-height: 40px;
+}
+
+.event-list{
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.event-list > li {
+	display: inline-block;
+  padding-left: 12px;
+}
+
+
+/****************************************************
+SECTION 6A: CSS defaults  
+*****************************************************/
+.input-search {
+  float: left;
+  height: 22px;
+  margin-top: 8px;
+  margin-left: 10%;
+  width: 80%;
+}
+
+
+/****************************************************
+SECTION 6A: Buttons
+*****************************************************/
+.button-submit {
+  float: left;
+  height: 32px;
+  margin-top: 8px;
+  margin-left: 10%;
+  width: 80%;
+}
+
+/****************************************************
+SECTION 6B: Warning and Error Text
+*****************************************************/
+
+
+/****************************************************
+SECTION 6C: Fonts	
+*****************************************************/
