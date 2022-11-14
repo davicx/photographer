@@ -46,13 +46,15 @@ SECTION 2: Site Structure
 	overflow: auto;	
 	margin: 68px auto 0px auto;
   min-height: 400px;
+  border: 1px solid black;
 }
 
 #widget-container {	
-  float: left;
+  display: inline-block;
 	min-height: 100px;
 	width: 600px;
 	margin: 20px auto 0px auto;
+  border: 1px solid blue;
 }
 
 

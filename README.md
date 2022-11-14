@@ -1,11 +1,6 @@
 ## Intuit Coding Challenge
 This is a simple application to display photographers from json data. It was built using React and Node.js and should be able to run locally. 
 
-### Steps Remaining (Before November 15, Tuesday)
-- Add React Form Validation 
-- Finish React Testing (Front end)
-- Style App
-
 ### Installation and Running
 
 #### Front End 
