@@ -2,6 +2,7 @@
 This is a simple application to display photographers from json data. It was built using React and Node.js and should be able to run locally. 
 
 ### Installation and Running
+To run you should navigate into and start the front end and back end following the instructions below. 
 
 #### Front End 
 Install: 

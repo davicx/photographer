@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useQuery } from "react-query";
 import axios from 'axios'
-import { sum } from '../functions/HelperFunctions'
+import { validateEventType, validateZipcode } from '../functions/HelperFunctions'
 
 import PhotoList from './PhotoList';
 
@@ -29,31 +29,23 @@ const PhotoSearch = () => {
       setZipcode(value)
     } else if (name === "eventType") {
       setEventType(value)
-    } 
-    console.log(sum(2,2))
+    }
   }
-
+  
   const handleSubmit = (event) => {
       event.preventDefault();
-      let validZipcode = false;
-      let validEventType = false;
+      let validZipcode = validateZipcode(zipcode);
+      let validEventType = validateEventType(eventType);
+      console.log(zipcode, eventType)
+      console.log(validEventType, validZipcode)
 
-      //Validate Event Type  
-      if(eventType.length > 2 && eventType.length <= 32) {
-        validEventType = true;
-      }
-
-      //Validate Zipcode 
-      let validZipcodeFormat = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipcode);
-      if(zipcode.length > 4 && zipcode.length <= 12 && validZipcodeFormat === true) {
-        validZipcode = true;
-      }     
-
-      //Handle Form Submit and Update
+      //Data is valid 
       if(validZipcode === true && validEventType === true ) {
         setEventTypeError(false)
         setZipcodeError(false)
         refetch();
+
+      //Data is not valid show error labels   
       } else {
         if(validZipcode === false) {
           setZipcodeError(true)
@@ -74,12 +66,29 @@ const PhotoSearch = () => {
 
   return (
       <div className = "search">
-          <form onSubmit={ handleSubmit }>
-            <input name= "zipcode" className="input-search" type="text" value={ zipcode } maxLength="12" onChange={handleChange} />
-            { zipcodeError && <p> Please enter a valid zipcode similar to this format: 74122 or 74122-6304 </p> }
-            <input name= "eventType" className="input-search" type="text" value={ eventType } maxLength="31" onChange={handleChange} />
-            { eventTypeError && <p> Please enter a valid event type between 3 and 30 letters. An example is wedding. </p> }
-            <button type="submit" className="button-submit" > Get Photographers </button>
+          <form onSubmit={ handleSubmit }> 
+
+            <div className = "search-holder">
+              <div className = "search-input-holder"> 
+                <label className = "input-label" for="zipcode">Zipcode:</label>
+                <input name= "zipcode" className="input-search" type="text" value={ zipcode } maxLength="12" onChange={handleChange} />
+              </div>
+              <div className = "search-error-holder"> 
+               { zipcodeError && <p className = "error-text"> Please enter a valid zipcode similar to this format: 74122 or 74122-6304 </p> }
+              </div>        
+            </div>
+
+            <div className = "search-holder">             
+              <div className = "search-input-holder"> 
+                <label className = "input-label" for="eventType">Event Type:</label>
+                <input name= "eventType" className="input-search" type="text" value={ eventType } maxLength="31" onChange={handleChange} />
+              </div>
+              <div className = "search-error-holder"> 
+                { eventTypeError && <p className = "error-text"> Please enter a valid event type between 3 and 30 letters.</p> }
+              </div>  
+            </div>
+
+            <button type="submit" title = "searchButton" className="button-submit uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" > Get Photographers </button>
         </form>
         { data && <PhotoList photographers = { data } />}
       </div>

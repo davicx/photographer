@@ -1,37 +1,19 @@
-import { sum } from '../../functions/HelperFunctions'
+import { validateZipcode, validateEventType } from '../../functions/HelperFunctions'
 
-describe('Components', () => {
-    it("Need to add more tests", () => {
-        expect(sum(2,2)).toEqual(4);
-   })
-})
-
-
-/*
-import { render, screen } from "@testing-library/react";
-import '@testing-library/jest-dom'
-import App from '../../App';
-
-describe('Components', () => {
-    it("Need to add more tests", () => {
-        expect(true).toEqual(true)
+describe('Check Helper Functions', () => {
+    it("Validates incorrect zipcode", () => {
+        expect(validateZipcode(223)).toEqual(false);
+        expect(validateZipcode("hi")).toEqual(false);
+        expect(validateZipcode(4444444-44)).toEqual(false);
     })
-})
-
-
-const app = require("../app");
-const request = require("supertest");
-
-describe('Test photographer routes', () => {
-    it("should return 200 if it works", async () => {
-        const res = await request(app).get('/api/photographers');
-        expect(res.statusCode).toEqual(200)
+    it("Validates correct zipcode", () => {
+        expect(validateZipcode(97330)).toEqual(false);
     })
-    it("should return 200 if it works", async () => {
-        const res = await request(app).get('/api/photographers/95961/wedding/');
-        expect(res.statusCode).toEqual(200)
+    it("Validates incorrect event type", () => {
+        expect(validateEventType("I")).toEqual(false);
     })
-    //TO DO: Need better route handling test cases here 
+    it("Validates correct event type", () => {
+        expect(validateEventType("wedding")).toEqual(true);
+        expect(validateEventType("sports")).toEqual(true);
+    })   
 })
-
-*/

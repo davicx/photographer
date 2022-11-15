@@ -22,16 +22,12 @@ SECTION 6C: Fonts
 
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /****************************************************
 SECTION 1: Main Body, Global Styles
 *****************************************************/
 html {	
 	height: 100%;
-	background-color: #FFFFFF;	    		
+	background-color: white;	    		
 }
 
 
@@ -39,22 +35,18 @@ html {
 SECTION 2: Site Structure
 *****************************************************/
 #site-wrapper {
-	background-color: #F8F9FA;		
-	background-color: #FFFFFF;		
 	width: 98%;
 	max-width: 1440px;
 	overflow: auto;	
 	margin: 68px auto 0px auto;
   min-height: 400px;
-  border: 1px solid black;
 }
 
 #widget-container {	
-  display: inline-block;
 	min-height: 100px;
+  overflow: auto;	
 	width: 600px;
-	margin: 20px auto 0px auto;
-  border: 1px solid blue;
+	margin: 12px auto 0px auto;
 }
 
 
@@ -67,6 +59,7 @@ SECTION 2: Site Structure
 @media (max-width: 600px) {
 	#widget-container{
 		width: 90%;
+    margin-left: 5%;
 		overflow: auto;	
 		min-width: 400px;
 	}
@@ -91,18 +84,43 @@ header {
 /****************************************************
 SECTION 4A: Photographer Page
 *****************************************************/
-
+.photo-app {
+  float: left;
+  width: 99%;
+  min-height: 120px;
+  overflow: auto;
+  border: 1px solid black;
+}
 
 /****************************************************
 SECTION 5A: Photo Search
 *****************************************************/
 .search {
   float: left;
-  width: 98%;
+  width: 100%;
   min-height: 120px;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border: 1px solid black;
+}
+
+.search-holder {
+  float: left;
+  width: 100%;
+  min-height: 74px;
+  border-bottom: 1px solid black;
+}
+
+.search-input-holder {
+  float: left;
+  width: 100%;
+  min-height: 40px;
+}
+
+.search-error-holder {
+  float: left;
+  width: 90%;
+  margin-left: 5%;
+  min-height: 28px; 
 }
 
 
@@ -112,7 +130,7 @@ SECTION 5B: Photo List
 .photo-list {
   float: left;
   margin-top: 40px;
-  width: 98%;
+  width: 100%;
   min-height: 60px;
 }
 
@@ -122,42 +140,47 @@ SECTION 5C: Photo Card
 *****************************************************/
 .card {
   float: left;
-  width: 98%;
+  width: 100%;
   min-height: 60px;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 12px;
+  background-color: #f2f2f2;
 }
 
 .avatar {
   float: left;
   margin: 0px;
-  width: 20%;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 .avatar-image {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .name {
   float: left;
   margin: 0px;
   width: 78%;
-  height: 30px;
+  height: 50px;
+  border-bottom: 1px solid black;
 }
 
 .location {
   float: left;
   margin: 0px;
   width: 78%;
-  height: 28px;
+  height: 48px;
+  border-bottom: 1px solid black;
 }
 
 .events {
   float: left;
   margin: 0px;
   clear: both;
-  width: 90%;
+  width: 100%;
   min-height: 40px;
 }
 
@@ -184,6 +207,12 @@ SECTION 6A: CSS defaults
   width: 80%;
 }
 
+.input-label {
+  float: left;
+  margin-top: 12px;
+  margin-left: 10%;
+}
+
 
 /****************************************************
 SECTION 6A: Buttons
@@ -199,8 +228,17 @@ SECTION 6A: Buttons
 /****************************************************
 SECTION 6B: Warning and Error Text
 *****************************************************/
+.error-text {
+  color: #b30000;
+  margin: 2px;
+  padding: 2px;
+}
 
 
 /****************************************************
-SECTION 6C: Fonts	
+SECTION 6C: Text and Fonts	
 *****************************************************/
+.text-card{
+  margin: 4px;
+  padding: 4px;
+}

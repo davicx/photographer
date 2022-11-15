@@ -7,24 +7,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-         <p> app</p> 
+         <PhotoApp />
       </div>
     </QueryClientProvider>
   );
 }
 
 export default App;
-
-
-/*
-
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <div className="App">
-         <PhotoApp />
-      </div>
-    </QueryClientProvider>
-  );
-}
-*/
