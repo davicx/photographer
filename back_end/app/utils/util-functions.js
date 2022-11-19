@@ -5,7 +5,7 @@ const fs = require('fs');
 //Function A.1: Filter Array based on zipcode and event type
 function filterPhotographers(photographerData, zipcode, eventType) {
 	const filteredPhotographers = photographerData.filter(function(photographer) {
-		if(photographer['address'].zip_code == zipcode && photographer['event_type'].type.includes(eventType)) {
+		if(photographer['address'].zip_code == zipcode && photographer['event_type'].type.includes(eventType.toLowerCase())) {
 			return true
 		}
 	})
@@ -29,4 +29,26 @@ async function loadJSON(filename) {
 	}
 }
 
-module.exports = { loadJSON, filterPhotographers}
+//FUNCTIONS C: Data Validation  
+//Function C.1: Validate Zipcode 
+function validateZipcode(zipcode) {
+    let validZipcodeFormat = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(parseInt(zipcode));
+    if(zipcode.length > 4 && zipcode.length <= 12 && validZipcodeFormat === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//Function Cs.1: Validate Small String 
+function validateStringSmall(smallString) {
+	if(smallString.length > 2 && smallString.length <= 32) {
+		return true;
+	 } else {
+		return false;
+	 }
+}
+
+
+module.exports = { loadJSON, filterPhotographers, validateZipcode, validateStringSmall}
+

@@ -11,14 +11,7 @@ photographerRouter.get('/api/photographers', function(req, res) {
 })
 
 //Route 2: Get a list of photographers for event and zipcode 
-photographerRouter.get('/api/photographers/:zipcode/:event', [
-    check('event').isLength({ min: 2 }).trim().escape(),
-    check('zipcode').isLength({ min: 2 }).trim().escape() //TO DO: Need wildcard validation for both zipcode types
-], function(req, res) {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
+photographerRouter.get('/api/photographers/:zipcode/:event', function(req, res) {
     photographerController.getFilteredPhotographers(req, res);
 })
 

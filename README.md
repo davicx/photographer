@@ -30,6 +30,48 @@ Run Tests:
 - Navigate to the root project directory (back_end)
 - Type and run from Terminal: npm test
 
+### Project Structure
+
+    .
+    ├── ...
+    ├── app                   
+    │   ├── controllers  
+    │   ├──── program.js      
+    │   ├── models  
+    │   ├──── program.js  
+    │   ├── routes  
+    │   ├──── program.js  
+    │   ├── utils  
+    │   ├──── program.js                                                
+    ├── __test__                   
+    │   ├── controllers  
+    │   ├──── program.js      
+    │   ├── models  
+    │   ├──── program.js  
+    │   ├── routes  
+    │   ├──── program.js  
+    │   ├── utils  
+    │   ├──── program.js  
+    ├── index.js (Entry Point into the Application) 
+
+    └── ...
+
+
+    .
+    ├── ...
+    ├── controllers	                   
+    │   ├── Program.js                                   
+    ├── node_modules							 
+    ├── routes
+    │   ├── program.js         
+    ├── seed
+    │   ├── ProgramSeeder.js  
+    ├── test
+    │   ├── app_test.js  
+    ├── app.js (Entry Point into the Application) 
+    ├── package.json
+    ├── README.MD
+    └── ...
 ### Questions
 Please feel free to reach out if there are any issues
 vasquezd@oregonstate.edu

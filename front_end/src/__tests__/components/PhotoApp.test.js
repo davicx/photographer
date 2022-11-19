@@ -12,3 +12,15 @@ the React Query Jest documentation.
 //STEP 2: Test the Photo Search Area inputs and button 
 //STEP 3: Test the Submit Button with mock request and response
 //STEP 4: Test the Page with 2 mock cards displaying
+
+import { renderWithClient } from "../utils";
+//import Simple from '../../components/Simple';
+import PhotoApp from '../../components/PhotoApp';
+
+describe('COMPONENT: Check PhotoApp component before user search', () => {
+    it("Looks for App to have loaded", async () => {       
+        const result = renderWithClient(<PhotoApp />)
+        expect(await result.findByText(/Posts/i)).toBeInTheDocument 
+    })
+})
+

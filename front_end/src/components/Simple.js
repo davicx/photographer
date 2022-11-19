@@ -1,19 +1,56 @@
-import React, { useState } from 'react'
+import React from 'react';
 import { useQuery } from "react-query";
 import axios from 'axios'
-import { validateEventType, validateZipcode } from '../functions/HelperFunctions'
-import getPhotographers from '../hooks/getPhotographers'
 
+import getPhotographers from '../hooks/getPhotographers'
 import PhotoList from './PhotoList';
 
 /*
 async function getPhotographers(zipCode, eventType) { 
   const photographerURL = 'http://localhost:3003/api/photographers/' + zipCode + '/' + eventType + '/';  
   const { data } = await axios.get(photographerURL)
-  console.log(data)
   return data
 } 
 */
+
+const Simple = () => {
+  const { isLoading, data, isError, error  } = useQuery(['group-posts'], () => getPhotographers(71586, "wedding"), 
+    { refetchInterval: 10000000 }
+  )
+
+  const currentPosts = data;
+  console.log(isLoading)
+  console.log(isError)
+  console.log(error)
+
+  return (
+  <div className="posts">
+       <p> Posts </p>
+      { isLoading && <div> loading... </div>}
+      { isError && <div> There was an error fetching the posts { error.message } </div>}
+      { data && <PhotoList photographers = { data } />}
+  </div>
+  );
+  }
+  
+export default Simple;
+
+/*
+      { data && <IndividualPost posts = { currentPosts } title="The posts!" />}
+*/
+
+  
+
+/*
+
+import React, { useState } from 'react'
+import { useQuery } from "react-query";
+import axios from 'axios'
+import { validateEventType, validateZipcode } from '../functions/HelperFunctions'
+
+import PhotoList from './PhotoList';
+
+
 
 const PhotoSearch = () => {
   const [zipcode, setZipcode] = useState('71586');
@@ -40,6 +77,8 @@ const PhotoSearch = () => {
       event.preventDefault();
       let validZipcode = validateZipcode(zipcode);
       let validEventType = validateEventType(eventType);
+      console.log(zipcode, eventType)
+      console.log(validEventType, validZipcode)
 
       //Data is valid 
       if(validZipcode === true && validEventType === true ) {
@@ -72,7 +111,7 @@ const PhotoSearch = () => {
 
             <div className = "search-holder">
               <div className = "search-input-holder"> 
-                <label className = "input-label" htmlFor="zipcode">Zipcode:</label>
+                <label className = "input-label" for="zipcode">Zipcode:</label>
                 <input name= "zipcode" className="input-search" type="text" value={ zipcode } maxLength="12" onChange={handleChange} />
               </div>
               <div className = "search-error-holder"> 
@@ -82,7 +121,7 @@ const PhotoSearch = () => {
 
             <div className = "search-holder">             
               <div className = "search-input-holder"> 
-                <label className = "input-label" htmlFor="eventType">Event Type:</label>
+                <label className = "input-label" for="eventType">Event Type:</label>
                 <input name= "eventType" className="input-search" type="text" value={ eventType } maxLength="31" onChange={handleChange} />
               </div>
               <div className = "search-error-holder"> 
@@ -98,3 +137,4 @@ const PhotoSearch = () => {
 }
  
 export default PhotoSearch;
+*/
