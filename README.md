@@ -36,22 +36,23 @@ Run Tests:
     ├── ...
     ├── app                   
     │   ├── controllers  
-    │   ├──── program.js      
+    │   ├──── photographer-controller.js      
     │   ├── models  
-    │   ├──── program.js  
+    │   ├──── photographers.js  
     │   ├── routes  
-    │   ├──── program.js  
+    │   ├──── photographer-routes.js  
     │   ├── utils  
-    │   ├──── program.js                                                
+    │   ├──── constants.js                                                
+    │   ├──── util-functions.js                                                
     ├── __test__                   
     │   ├── controllers  
-    │   ├──── program.js      
+    │   ├──── photographer-controller.test.js      
     │   ├── models  
-    │   ├──── program.js  
+    │   ├──── photographers.js  
     │   ├── routes  
-    │   ├──── program.js  
+    │   ├──── photographer-routes.test.js  
     │   ├── utils  
-    │   ├──── program.js  
+    │   ├──── util-functions.test.js  
     ├── index.js (Entry Point into the Application) 
     └── ...
 
