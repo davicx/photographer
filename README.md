@@ -53,7 +53,6 @@ Run Tests:
     │   ├── utils  
     │   ├──── program.js  
     ├── index.js (Entry Point into the Application) 
-
     └── ...
 
 ### Project Structure
