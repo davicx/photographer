@@ -13,7 +13,7 @@ async function getPhotographers(req, res) {
 
 }
 
-//Controller A2: Get a list of photographers that match critera 
+//Controller A2: Get a list of photographers that match a specific critera 
 async function getFilteredPhotographers(req, res) {
 	const zipcode = req.params.zipcode;
 	const eventType = req.params.event;

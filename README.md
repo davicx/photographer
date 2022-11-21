@@ -31,7 +31,7 @@ Run Tests:
 - Type and run from Terminal: npm test
 
 ### Project Structure
-
+#### Backend 
     .
     ├── ...
     ├── app                   
@@ -56,22 +56,32 @@ Run Tests:
 
     └── ...
 
-
+### Project Structure
+#### Frontend 
     .
     ├── ...
-    ├── controllers	                   
-    │   ├── Program.js                                   
-    ├── node_modules							 
-    ├── routes
-    │   ├── program.js         
-    ├── seed
-    │   ├── ProgramSeeder.js  
-    ├── test
-    │   ├── app_test.js  
-    ├── app.js (Entry Point into the Application) 
-    ├── package.json
-    ├── README.MD
+    ├── src  
+    ├── __test__                         
+    │   ├── components  
+    │   ├── PhotoApp.test.js  
+    │   ├── PhotoList.test.js  
+    │   ├── PhotoSearch.test.js    
+    │   ├── functions  
+    │   ├──── HelperFunctions.js
+    │   ├── setup.js                                                  
+    │   ├── utils.js                                                  
+    ├── components          
+    │   ├── PhotoApp.js  
+    │   ├── PhotoCard.js      
+    │   ├── PhotoList.js   
+    │   ├── PhotoSearch.js      
+    ├── functions     
+    │   ├── HelperFunction.js  
+    ├── hooks     
+    │   ├── getPhotographers.js  
+    ├── App.js (Entry Point into the Application) 
     └── ...
+
 ### Questions
 Please feel free to reach out if there are any issues
 vasquezd@oregonstate.edu

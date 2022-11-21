@@ -16,4 +16,3 @@ photographerRouter.get('/api/photographers/:zipcode/:event', function(req, res) 
 })
 
 module.exports = photographerRouter;
-

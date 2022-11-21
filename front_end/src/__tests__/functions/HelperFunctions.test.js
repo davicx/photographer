@@ -1,6 +1,6 @@
 import { validateZipcode, validateEventType } from '../../functions/HelperFunctions'
 
-describe('Check Helper Functions', () => {
+describe('FUNCTIONS: Check Helper Functions', () => {
     it("Validates incorrect zipcode", () => {
         expect(validateZipcode(223)).toEqual(false);
         expect(validateZipcode("hi")).toEqual(false);

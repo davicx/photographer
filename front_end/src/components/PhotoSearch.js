@@ -6,14 +6,6 @@ import getPhotographers from '../hooks/getPhotographers'
 
 import PhotoList from './PhotoList';
 
-/*
-async function getPhotographers(zipCode, eventType) { 
-  const photographerURL = 'http://localhost:3003/api/photographers/' + zipCode + '/' + eventType + '/';  
-  const { data } = await axios.get(photographerURL)
-  console.log(data)
-  return data
-} 
-*/
 
 const PhotoSearch = () => {
   const [zipcode, setZipcode] = useState('71586');
